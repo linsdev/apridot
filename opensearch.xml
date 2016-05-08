@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+<ShortName>apridot.comxa.com</ShortName>
+<Description>Apridot Website Studio</Description>
+<Contact>apridot.center@gmail.com</Contact>
+<Attribution>© Apridot Website Studio, All Rights Reserved.</Attribution>
+<Developer>Litvin Nazar</Developer>
+<InputEncoding>UTF-8</InputEncoding>
+<Language>en-us</Language>
+<OutputEncoding>UTF-8</OutputEncoding>
+<Image>favicon.ico</Image>
+<Tags>Создание сайтов</Tags>
+</OpenSearchDescription>

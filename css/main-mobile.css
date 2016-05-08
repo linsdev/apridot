@@ -1,0 +1,167 @@
+@media handheld and (max-width: 1023px), screen and (max-width: 1023px) {
+
+header {
+padding-left: 1mm;
+padding-right: 1mm;
+}
+
+#logo {
+height: 12mm;
+max-width: 374px;
+border: none;
+margin-right: 1mm;
+}
+
+#mobile-menu {
+cursor: pointer;
+display: block;
+float: right;
+width: 60%;
+line-height: 12mm;
+padding-left: 2mm;
+padding-right: 2mm;
+-webkit-border-radius: 1.5mm;
+   -moz-border-radius: 1.5mm;
+        border-radius: 1.5mm;
+background: #ff8000;
+-webkit-transition: all 0.3s linear;
+   -moz-transition: all 0.3s linear;
+     -o-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+color: white;
+font-size: 1.5em;
+}
+#mobile-menu:hover {
+background: #007fff;
+}
+#mobile-menu:active {
+background: #5388AD;
+}
+
+#menu {
+position: fixed;
+right: 0;
+width: 60%;
+top: 14mm;
+margin: 0 2mm 0 0;
+padding: 0;
+list-style: none;
+font-size: 1.5em;
+-webkit-box-shadow: 0 0 1mm 0 rgba(0, 0, 0, .4);
+   -moz-box-shadow: 0 0 1mm 0 rgba(0, 0, 0, .4);
+        box-shadow: 0 0 1mm 0 rgba(0, 0, 0, .4);
+-webkit-transition: all 0.5s linear;
+   -moz-transition: all 0.5s linear;
+     -o-transition: all 0.5s linear;
+        transition: all 0.5s linear;
+-webkit-transform: translateX(110%);
+   -moz-transform: translateX(110%);
+    -ms-transform: translateX(110%);
+     -o-transform: translateX(110%);
+        transform: translateX(110%);
+}
+
+#menu li {
+width: 100%;
+line-height: 1cm;
+float: left;
+padding-top: 2mm;
+padding-bottom: 2mm;
+border-top-style: solid;
+border-top-color: #EF7300;
+border-top-width: 1px;
+}
+
+#menu li a {
+padding-left: 7%;
+}
+
+@-webkit-keyframes rotate {
+   from { -webkit-transform: rotateX(100deg); }
+   50%   { -webkit-transform: rotateX(-10deg); }
+   70%   { -webkit-transform: rotateX(  2deg); }
+   80%   { -webkit-transform: rotateX(  0deg); }
+   95%   { -webkit-transform: rotateX( -2deg); }
+   to 	{ -webkit-transform: rotateX(  0deg); }
+}
+@-moz-keyframes rotate {
+   from { -moz-transform: rotateX(100deg); }
+   50%   { -moz-transform: rotateX(-10deg); }
+   70%   { -moz-transform: rotateX(  2deg); }
+   80%   { -moz-transform: rotateX(  0deg); }
+   95%   { -moz-transform: rotateX( -2deg); }
+   to 	{ -moz-transform: rotateX(  0deg); }
+}
+@-ms-keyframes rotate {
+   from { -ms-transform: rotateX(100deg); }
+   50%   { -ms-transform: rotateX(-10deg); }
+   70%   { -ms-transform: rotateX(  2deg); }
+   80%   { -ms-transform: rotateX(  0deg); }
+   95%   { -ms-transform: rotateX( -2deg); }
+   to 	{ -ms-transform: rotateX(  0deg); }
+}
+@-o-keyframes rotate {
+   from { -o-transform: rotateX(100deg); }
+   50%   { -o-transform: rotateX(-10deg); }
+   70%   { -o-transform: rotateX(  2deg); }
+   80%   { -o-transform: rotateX(  0deg); }
+   95%   { -o-transform: rotateX( -2deg); }
+   to 	{ -o-transform: rotateX(  0deg); }
+}
+@keyframes rotate {
+   from { transform: rotateX(100deg); }
+   50%   { transform: rotateX(-10deg); }
+   70%   { transform: rotateX(  2deg); }
+   80%   { transform: rotateX(  0deg); }
+   95%   { transform: rotateX( -2deg); }
+   to 	{ transform: rotateX(  0deg); }
+}
+#toggle:checked + #menu {
+display: block;
+-webkit-animation: rotate 1s ease-in-out;
+   -moz-animation: rotate 1s ease-in-out;
+    -ms-animation: rotate 1s ease-in-out;
+     -o-animation: rotate 1s ease-in-out;
+        animation: rotate 1s ease-in-out;
+-webkit-transform: translateX(0);
+   -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+     -o-transform: translateX(0);
+        transform: translateX(0);
+}
+
+#menu-icon {
+float: right;
+margin-top: 1mm;
+width: 12mm;
+height: 8mm;
+}
+
+.line {
+background: white;
+height: 20%;
+margin: 11%;
+}
+
+} /* handheld and (max-width: 1023px), screen and (max-width: 1023px) */
+
+@media handheld and (max-width: 1023px) and (orientation: landscape) {
+#menu li {
+line-height: 8mm;
+}
+} /* handheld and (max-width: 1023px) and (orientation: landscape) */
+
+@media handheld and (orientation: portrait), screen and (max-width: 719px) and (orientation: portrait) {
+#menu {
+width: 100%;
+margin: 0;
+}
+} /* handheld and (orientation: portrait), screen and (max-width: 719px) and (orientation: portrait) */
+
+@media handheld and (max-width: 335px), screen and (max-width: 335px) {
+
+#mobile-menu {
+width: 50%;
+}
+
+} /* handheld and (max-width: 335px), screen and (max-width: 335px) */

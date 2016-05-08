@@ -1,0 +1,91 @@
+Options -Indexes -Includes
+
+AddDefaultCharset utf-8
+DirectoryIndex index.php
+
+# Перенаправление
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^service$ /service.php
+RewriteRule ^works$ /works.php
+RewriteRule ^contacts$ /contacts.php
+RewriteRule ^send$ /send.php
+# Адрес без слеша в конце
+RedirectMatch 301 ^/(.*)/$ /$1
+
+#—————————————————— Запрет доступа к определённым файлам ——————————————————
+<Files h.php>
+deny from all
+</Files>
+<Files f.php>
+deny from all
+</Files>
+<Files *.css>
+deny from all
+</Files>
+
+#—————————————————— Cжатие данных при передачи пользователю ——————————————————
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript
+</IfModule>
+<IfModule mod_gzip.c>
+mod_gzip_on Yes
+</IfModule>
+
+#————————————————————————————— Настройка кеша —————————————————————————————————
+<ifModule mod_expires.c>
+    ExpiresActive On
+    #по умолчанию кеш в один день
+    ExpiresDefault "access plus 1 seconds"
+    #кэшировать флэш и изображения на месяц
+    ExpiresByType image/x-icon "access plus 2592000 seconds"
+    ExpiresByType image/jpeg "access plus 2592000 seconds"
+    ExpiresByType image/png "access plus 2592000 seconds"
+    ExpiresByType image/gif "access plus 2592000 seconds"
+    ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+    #кэшировать css, javascript и текстовые файлы на одну неделю
+    ExpiresByType text/css "access plus 604800 seconds"
+    ExpiresByType text/javascript "access plus 604800 seconds"
+    ExpiresByType application/javascript "access plus 604800 seconds"
+    ExpiresByType application/x-javascript "access plus 604800 seconds"
+    #кэшировать html и htm файлы на один день
+    ExpiresByType text/html "access plus 43200 seconds"
+</ifModule>
+<FilesMatch "e.php">
+  ExpiresActive On
+  ExpiresDefault "now"
+  Header append Cache-Control must-revalidate
+</FilesMatch>
+
+#————————————————————— Обработка ошибок ———————————————————————————————————————
+# Неправильный запрос
+ErrorDocument 400 /e.php?c=400
+# Требуется авторизация
+ErrorDocument 401 /e.php?c=401
+# Доступ запрещен
+ErrorDocument 403 /e.php?c=404
+# Файл не найден
+ErrorDocument 404 /e.php?c=404
+# Недопустимый метод
+ErrorDocument 405 /e.php?c=405
+# Непреемлимый запрос
+ErrorDocument 406 /e.php?c=406
+# Время ожидания сервером передачи от клиента истекло
+ErrorDocument 408 /e.php?c=408
+# Файл был удалён
+ErrorDocument 410 /e.php?c=410
+# Запрос слишком длинный
+ErrorDocument 414 /e.php?c=414
+
+# Внутренняя ошибка сервера
+ErrorDocument 500 /e.php?c=500
+# Функция не реализована
+ErrorDocument 501 /e.php?c=501
+# Дефект шлюза
+ErrorDocument 502 /e.php?c=502
+# Служба недоступна
+ErrorDocument 503 /e.php?c=503
+# Время прохождения через шлюз истекло
+ErrorDocument 504 /e.php?c=504
+# Неподдерживаемая версия HTTP
+ErrorDocument 505 /e.php?c=505

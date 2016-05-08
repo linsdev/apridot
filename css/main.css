@@ -1,0 +1,177 @@
+/* Тень сверху страницы */
+body:before 
+{
+content: "";
+position: fixed;
+top: -10px;
+left: 0;
+width: 100%;
+height: 10px;
+z-index: 100;
+-webkit-box-shadow: 0px 0px 2mm rgba(0,0,0,.4);
+   -moz-box-shadow: 0px 0px 2mm rgba(0,0,0,.4);
+        box-shadow: 0px 0px 2mm rgba(0,0,0,.4);
+}
+body {
+background: #F8F8F8;
+font-family: Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+font-size: 4.5mm;
+margin-top: 2mm;
+margin-bottom: 2mm;
+max-width: 1170px;
+margin-right: auto;
+margin-left: auto;
+}
+
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+-webkit-border-radius: 4px;
+        border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+-webkit-border-radius: 4px;
+        border-radius: 4px;
+background: #007fff; 
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+p { margin: 0 }
+a { text-decoration: none }
+
+h1 {
+font-family: Tahoma,Geneva,"DejaVu Sans Condensed",sans-serif;
+color: #19528b;
+text-shadow: 0px 0px 1px rgba(0,0,0,.7);
+margin-top: 6mm;
+margin-bottom: 5mm;
+}
+
+h2 {
+color: #e57300;
+margin-top: 0;
+margin-bottom: 2mm;
+}
+
+/* Верх страницы */
+header {
+padding-left: 4mm;
+padding-right: 4mm;
+font-family: Palatino,"Palatino Linotype",Palladio,"URW Palladio L","Book Antiqua","Liberation Serif",Times,serif;
+margin-bottom: 2mm;
+-webkit-perspective: 800px;
+   -moz-perspective: 800px;
+    -ms-perspective: 800px;
+     -o-perspective: 800px;
+        perspective: 800px;
+}
+
+footer {
+color: white;
+background: #ff8000 !important;
+}
+
+#menu li {		/* пункты главного меню */
+background: #ff8000;
+-webkit-transition: all 0.3s linear;
+   -moz-transition: all 0.3s linear;
+     -o-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+}
+#menu li:hover {	/* при наведении мыши на пункт меню */
+background: #007fff;
+}
+#menu li:active {	/* при нажатии пункта меню */
+background: #5388AD;
+}
+
+#menu li a {
+display: block;
+color: white;
+}
+
+/* ———————————————————— Стиль для блока данных ———————————————————— */
+.block {
+min-width: 280px;
+margin-bottom: 2mm;
+padding: 2mm;
+background: white;
+   -moz-border-radius: 1mm;
+-webkit-border-radius: 1mm;
+        border-radius: 1mm;
+-webkit-box-shadow: 0px 0px 1mm 0px rgba(0, 0, 0, .4);
+   -moz-box-shadow: 0px 0px 1mm 0px rgba(0, 0, 0, .4);
+        box-shadow: 0px 0px 1mm 0px rgba(0, 0, 0, .4);
+text-align: center; /* justify */
+}
+@media all and (max-width: 1170px) {
+.block {
+   -moz-border-radius: 0;
+-webkit-border-radius: 0;
+        border-radius: 0;
+}
+}
+@media handheld {
+.block {
+padding: 1mm;
+}
+}
+
+.block a {
+color: #007fff
+}
+.block a:hover {
+color: #ff8000;
+border-bottom: 1px solid #ff8000;
+}
+.block a:visited {
+color: #4ca5ff
+}
+.block a:visited:hover {
+color: #ff8040;
+border-bottom: 1px solid #ff8040;
+}
+/* ———————————————— Стили для выравнивания текста ————————————————— */
+.right    { text-align: right   }
+.left      { text-align: left    }
+.justify { text-align: justify }
+
+/* ————————————————————————— главное меню ————————————————————————— */
+@media screen and (min-width: 1024px) {
+#logo {
+height: 2cm;
+border: none;
+}
+
+#menu {
+list-style: none;	/* прячем маркеры */
+float: right;
+font-size: 1.5em;
+margin-top: 2mm;
+}
+
+#menu li {			/* пункты главного меню */
+display: inline-block;
+margin-right: 2.5mm;	/* делаем отступ чтобы пункты меню не сливались */
+width: 45mm;
+line-height: 16mm;
+-webkit-border-radius: 4mm;
+   -moz-border-radius: 4mm;
+        border-radius: 4mm;
+}
+#menu li:hover {	/* при наведении мыши на пункт меню */
+width: 6cm;
+}
+
+#menu li a {
+text-align: center;
+}
+
+#mobile-menu {
+display: none;
+}
+}
+/* ———————————————————————— конец главного меню ———————————————————————— */
